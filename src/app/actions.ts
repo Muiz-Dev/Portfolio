@@ -27,16 +27,39 @@ export async function sendContactEmail(formData: z.infer<typeof contactSchema>):
   const { name, email } = parsedData.data
 
   try {
+    const contactToEmail = process.env.CONTACT_TO_EMAIL || personalData.email;
+    const emailLogoUrl = process.env.EMAIL_LOGO_URL || personalData.brandLogoUrl || undefined;
+
+    const socials = [
+      { label: 'LinkedIn', href: personalData.linkedin },
+      { label: 'GitHub', href: personalData.github },
+      { label: 'X', href: personalData.x },
+      { label: 'Instagram', href: personalData.instagram },
+    ].filter((x) => Boolean(x.href));
+
     // Prepare emails
-    const adminEmail = getAdminNotificationEmail({ formData: parsedData.data, adminName: personalData.name });
-    const userEmail = getUserConfirmationEmail({ userName: name, adminName: personalData.name });
+    const adminEmail = getAdminNotificationEmail({
+      formData: parsedData.data,
+      adminName: personalData.name,
+      portfolioUrl: personalData.portfolioUrl,
+      logoUrl: emailLogoUrl,
+      socials,
+    });
+    const userEmail = getUserConfirmationEmail({
+      userName: name,
+      adminName: personalData.name,
+      portfolioUrl: personalData.portfolioUrl,
+      logoUrl: emailLogoUrl,
+      socials,
+    });
 
     // Send email to admin
     await sendEmail({
-      to: personalData.email,
+      to: contactToEmail,
       subject: adminEmail.subject,
       html: adminEmail.html,
       text: adminEmail.text,
+      replyTo: email,
     });
     
     // Send confirmation email to user

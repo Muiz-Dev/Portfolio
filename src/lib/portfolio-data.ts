@@ -3,7 +3,8 @@
 export const personalData = {
   name: 'Muiz Adesope',
   title: 'Product-Focused Full-Stack Developer',
-  email: 'muiz.dev.io@gmail.com',
+  email: 'contact@muizdev.xyz',
+  brandLogoUrl: 'https://jowfuqlsaxqjfceuxsez.supabase.co/storage/v1/object/public/storage/muiz-dev-brand-white.png',
   phone: '+2349030049952',
   location: 'Lagos, Nigeria',
   portfolioUrl: 'https://muiz-dev.vercel.app',
@@ -15,7 +16,7 @@ export const personalData = {
   x: 'https://x.com/muiz_sui',
   resumeText: `Muiz Adesope
 Product-Focused Full-Stack Developer
-muiz.dev.io@gmail.com | +2349030049952 | Lagos, Nigeria | https://muiz-dev.vercel.app | linkedin.com/in/muiz-dev
+contact@muizdev.xyz | +2349030049952 | Lagos, Nigeria | https://muiz-dev.vercel.app | linkedin.com/in/muiz-dev
 
 EDUCATION
 National Diploma / Mechatronics Engineering
