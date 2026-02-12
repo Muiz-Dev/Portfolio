@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { Theme } from '@radix-ui/themes';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Muiz Adesope | Product-Focused Full-Stack Developer",
@@ -48,6 +49,7 @@ export default function RootLayout({
           <Footer />
           <Toaster />
         </Theme>
+        <Analytics />
       </body>
     </html>
   );
