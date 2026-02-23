@@ -7,7 +7,7 @@ export const personalData = {
   brandLogoUrl: 'https://jowfuqlsaxqjfceuxsez.supabase.co/storage/v1/object/public/storage/muiz-dev-brand-white.png',
   phone: '+2349030049952',
   location: 'Lagos, Nigeria',
-  portfolioUrl: 'https://muiz-dev.vercel.app',
+  portfolioUrl: 'https://www.muizdev.xyz/',
   resumeUrl: 'https://jowfuqlsaxqjfceuxsez.supabase.co/storage/v1/object/public/storage/Muiz_Adesope_Resume.pdf',
   linkedin: 'https://linkedin.com/in/muiz-dev',
   github: 'https://github.com/Muiz-dev',
@@ -16,7 +16,7 @@ export const personalData = {
   x: 'https://x.com/muiz_sui',
   resumeText: `Muiz Adesope
 Product-Focused Full-Stack Developer
-contact@muizdev.xyz | +2349030049952 | Lagos, Nigeria | https://muiz-dev.vercel.app | linkedin.com/in/muiz-dev
+contact@muizdev.xyz | +2349030049952 | Lagos, Nigeria | https://www.muizdev.xyz/ | linkedin.com/in/muiz-dev
 
 EDUCATION
 National Diploma / Mechatronics Engineering
@@ -39,9 +39,15 @@ Digital Technology Academy
 
 Web Developer
 LoveView Estates (UK-based Real Estate Agency)
-2024 - present
+2024 - 2025
 - Delivered a responsive real-estate website with CMS-managed listings and lead capture
 - Structured content for clear navigation, service discovery, and SEO-friendly pages
+
+Product Developer / Full-Stack Developer
+AfriConnect Exchange
+2025 - present
+- Building cross-platform marketplace experiences across web and mobile
+- Implemented listings, escrow payments, search, messaging, notifications, onboarding, and admin tools
 
 Product Developer / Community Manager
 WheatChain Protocol
@@ -126,7 +132,7 @@ export const experiences = [
   {
     role: 'Web Developer',
     company: 'LoveView Estates',
-    period: '2024 - Present',
+    period: '2024 - 2025',
     description: 'Delivered a responsive real-estate website with CMS-managed listings, lead capture, and clean navigation for UK clients.',
   },
   {
@@ -140,6 +146,12 @@ export const experiences = [
     company: 'Digital Technology Academy',
     period: '2024 - 2025',
     description: 'Collaborated on feature development, testing, and bug fixes across frontend and backend workstreams.',
+  },
+  {
+    role: 'Product Developer / Full-Stack Developer',
+    company: 'AfriConnect Exchange',
+    period: '2025 - Present',
+    description: 'Building a cross-platform marketplace product with listings, escrow payments, Algolia search, messaging, notifications, onboarding, device tracking, and admin tools across web and mobile experiences.',
   },
   {
     role: 'Product Developer / Community Manager',
@@ -182,7 +194,7 @@ export const projects = [
     stack: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Vercel'],
     imageUrl: '/icons/123455.png',
     imageHint: 'portfolio design',
-    liveUrl: 'https://muiz-dev.vercel.app/',
+    liveUrl: 'https://www.muizdev.xyz/',
     githubUrl: 'https://github.com/wheat-eco/Dev-port',
     metrics: null,
   },

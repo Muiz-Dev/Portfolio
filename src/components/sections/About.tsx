@@ -26,6 +26,7 @@ export function About() {
                   src="/profile-2.jpg"
                   alt="Muiz Adesope"
                   fill
+                  sizes="(max-width: 768px) 90vw, 384px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   data-ai-hint="developer portrait"
                 />

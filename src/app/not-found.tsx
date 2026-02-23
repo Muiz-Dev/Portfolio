@@ -1,6 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, Home } from 'lucide-react';
 import { Button, Heading, Text } from '@radix-ui/themes';
+
+export const metadata: Metadata = {
+  title: '404 - Page Not Found',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NotFound() {
   return (

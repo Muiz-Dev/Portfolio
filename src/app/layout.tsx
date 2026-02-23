@@ -1,15 +1,96 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { Theme } from '@radix-ui/themes';
 import { Analytics } from '@vercel/analytics/next';
+import { googleSiteVerification, ogImagePath, siteDescription, siteName, siteTitle, siteUrl } from '@/lib/seo';
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+  colorScheme: 'light',
+};
 
 export const metadata: Metadata = {
-  title: "Muiz Adesope | Product-Focused Full-Stack Developer",
-  description: "The personal portfolio of Muiz Adesope (Adesope Muiz), a product-focused full-stack developer from Lagos, Nigeria who builds web apps, dashboards, and marketplaces with React, Next.js, and modern web technologies.",
-  keywords: ['Muiz Adesope', 'Adesope Muiz', 'Product-Focused Developer', 'Full-Stack Developer', 'Web Developer', 'React Developer', 'Next.js Developer', 'PHP', 'Nigeria', 'Lagos'],
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: '%s | Muiz Adesope',
+  },
+  description: siteDescription,
+  applicationName: siteName,
+  authors: [{ name: 'Muiz Adesope', url: siteUrl }],
+  creator: 'Muiz Adesope',
+  publisher: 'Muiz Adesope',
+  category: 'technology',
+  keywords: [
+    'Muiz Adesope',
+    'Adesope Muiz',
+    'product-focused full-stack developer',
+    'Next.js developer',
+    'React developer',
+    'TypeScript developer',
+    'portfolio website',
+    'Lagos Nigeria developer',
+  ],
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: '/',
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: ogImagePath,
+        alt: 'Muiz Adesope portfolio preview image',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+    images: [ogImagePath],
+    creator: '@muiz_sui',
+  },
+  manifest: '/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
+  referrer: 'origin-when-cross-origin',
+  formatDetection: {
+    email: false,
+    telephone: false,
+    address: false,
+  },
+  ...(googleSiteVerification
+    ? {
+        verification: {
+          google: googleSiteVerification,
+        },
+      }
+    : {}),
 };
 
 export default function RootLayout({
@@ -26,14 +107,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        {/* Favicon and App Icons */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
       </head>
       <body className="font-body antialiased">
         <Theme
